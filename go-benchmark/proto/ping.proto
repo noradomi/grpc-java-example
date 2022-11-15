@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "com.noradomi.spring.grpc.protobuf";
+
+package noradomi.protobuf;
+
+message PingRequest {
+  int64 timestamp = 1;
+}
+
+message PingResponse {
+  int64 timestamp = 1;
+  string message = 2;
+}
+
+service PingService {
+  rpc Ping (PingRequest) returns (PingResponse);
+}
